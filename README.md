@@ -9,3 +9,15 @@ source activate venv/ --> GitBash
 
 3. Install your requirements file
 pip install -r requirements.txt
+
+4. Write down your logger code and logs.py, after that 
+python logs.py
+
+5. Here are some github coommands for pushing the files and code
+git add .
+git commit -m "Commit Message"
+git push origin main
+
+
+
+
