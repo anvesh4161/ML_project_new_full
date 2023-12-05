@@ -18,6 +18,6 @@ git add .
 git commit -m "Commit Message"
 git push origin main
 
-
+6. Create logger and exception to catch logs
 
 

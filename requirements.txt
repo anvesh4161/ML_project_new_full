@@ -1,10 +1,4 @@
 pandas
 numpy
 sklearn
-catboost
-xgboost
-matplotib
-seaborn
-TensorFlow
-keras
 -e .
