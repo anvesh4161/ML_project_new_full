@@ -1,1 +1,8 @@
+# Data Ingestion
+
 constant file -> coonfiguration fie -> data ingestion
+
+# Data Transformation
+
+constant file -> coonfiguration file -> data transformation -> utils file -> data transformation
+
