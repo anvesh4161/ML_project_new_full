@@ -36,7 +36,7 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
             df.drop(['Delivery_person_ID','Restaurant_latitude','Restaurant_longitude',
                                 'Delivery_location_latitude',
                                 'Delivery_location_longitude',
-                                'Order_Date','Time_Orderd','Time_Order_picked'])
+                                'Order_Date','Time_Orderd','Time_Order_picked'], axis = 1, inplace = True)
             
             logging.info("Dropping columns from our original dataset")
             
@@ -53,6 +53,17 @@ class Feature_Engineering(BaseEstimator, TransformerMixin):
         except Exception as e:
             raise CustomException(e, sys)
         
+    def fit(self,X,y=None):
+        return self
+    
+    def transform(self,X:pd.DataFrame,y=None):
+        try:    
+            transformed_df=self.transform_data(X)
+                
+            return transformed_df
+        except Exception as e:
+            raise CustomException(e,sys) from e
+        
         
 @dataclass
 class DataTransformationConfig():
@@ -65,7 +76,7 @@ class DataTransformation():
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
         
-    def data_transformation_obj(self):
+    def get_data_transformation_obj(self):
         try:
             Road_traffic_density = ['Low','Medium','High','jam']
             Weather_conditions = ['Sunny','Cloudy','Fog','Sandstorms','Windy','Stormy']
@@ -102,10 +113,10 @@ class DataTransformation():
                 ('ordinal_pipeline', ordinal_pipeline, ordinal_encoder)
             ])
             
-            return preprocessor
             logging.info("Pipeline steps are completed")
-        
+            return preprocessor
             
+        
         except Exception as e:
             raise CustomException(e, sys)
         

@@ -6,3 +6,8 @@ constant file -> coonfiguration fie -> data ingestion
 
 constant file -> coonfiguration file -> data transformation -> utils file -> data transformation
 
+# Model Training
+1. constant -> done
+2. configuration -> done
+3. Model Training
+4. utils file (helper function)
